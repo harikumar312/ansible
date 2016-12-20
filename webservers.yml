@@ -1,0 +1,5 @@
+---
+- hosts: tag_Name_Apache
+  roles:
+    - common
+    - webtier
