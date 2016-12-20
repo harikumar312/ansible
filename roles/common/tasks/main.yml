@@ -1,9 +1,11 @@
 ---
 
-- name: install NTP
+- name: ensure NTP is installed
   yum: name=ntp state=installed
+  become: true
   tags: ntp
 
 - name: ensure NTP is enabled and started
   service: name=ntpd state=started enabled=yes
+  become: true
   tags: ntp
