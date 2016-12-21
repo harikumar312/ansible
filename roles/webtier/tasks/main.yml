@@ -1,11 +1,16 @@
 ---
 
-- name: ensure Apache2 is installed
+- name: ensure Apache is installed
   yum: name=httpd state=installed
   become: true
   tags: apache
 
-- name: ensure Apache2 is enabled and started
+- name: ensure the SSL/TLS module for Apache is installed
+  yum: name=mod_ssl state=installed
+  become: true
+  tags: apache
+
+- name: ensure Apache is enabled and started
   service: name=httpd state=started enabled=yes
   become: true
   tags: apache
