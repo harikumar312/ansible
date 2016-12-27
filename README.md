@@ -12,6 +12,7 @@ Before I could begin, I had to configure an Ansible server running in my AWS VPC
 1. Launch an instance with the new IAM role
 1. Download EC2 scripts from [Ansible GitHub repo](https://github.com/ansible/ansible)
 1. Configure command line environment according to instructions in blog post
+1. Edit `ec2.ini` to make AWS CLI use private DNS names and IPs
 
 The time I spent configuring these prerequisites turned out to be worthwhile. A dynamic inventory allows me to refer to groups of AWS instances by their tags. I can also automatically apply my playbooks to new instances launched since the last time I ran Ansible.
 
